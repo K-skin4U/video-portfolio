@@ -7,9 +7,10 @@ export default async function Portfolio() {
   return (
     <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#fff' }}>
       <header style={{ marginBottom: '60px', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '48px', marginBottom: '20px', color: '#000' }}>Video Portfolio</h1>
+        <h1 style={{ fontSize: '48px', marginBottom: '20px', color: '#000' }}>Joohyung Park</h1>
         <p style={{ fontSize: '20px', color: '#666' }}>
-          Professional video production work
+            Full-Cycle Video Producer: Motion Graphics, Animation, Editing, Color Correction & Audio Post-Production
+
         </p>
       </header>
 
@@ -71,7 +72,7 @@ export default async function Portfolio() {
         color: '#666',
         fontSize: '14px'
       }}>
-        © 2026 Video Portfolio. All rights reserved.
+        © 2026 Joohyung Park. All rights reserved.
       </footer>
     </div>
   );
