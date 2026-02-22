@@ -3,16 +3,23 @@ import { getPortfolioProjects } from '../lib/contentful';
 
 export default async function Portfolio() {
   const projects = await getPortfolioProjects();
+  // 디버깅 - 첫 번째 프로젝트 데이터 확인
+  console.log('First project:', projects[0]);
 
   return (
     <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#fff' }}>
       <header style={{ marginBottom: '60px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '48px', marginBottom: '20px', color: '#000' }}>Joohyung Park</h1>
         <p style={{ fontSize: '16px', color: '#666' }}>
-            Full-Cycle Video Producer: Motion Graphics, Animation, Editing, Color Correction & Audio Post-Production
-
+          Full-Cycle Video Producer: Motion Graphics, Animation, Editing, Color Correction & Audio Post-Production
         </p>
       </header>
+
+      {/* 디버깅 정보 */}
+      <div style={{ background: '#f0f0f0', padding: '20px', marginBottom: '20px' }}>
+        <h3>Debug Info:</h3>
+        <p>Thumbnail URL: {projects[0]?.thumbnailImage || 'NOT FOUND'}</p>
+      </div>
 
       {projects.map((project) => (
         <section key={project.id} style={{ marginBottom: '80px' }}>
