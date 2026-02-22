@@ -1,18 +1,11 @@
-// lib/contentful.ts
-import { createClient } from 'contentful';
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-});
-
-export async function getPortfolioProjects() {
-  const entries = await client.getEntries({
-    content_type: 'portfolioProject',
-    order: ['-fields.date'] as any
-  });
-
-  return entries.items.map((item: any) => ({
+return entries.items.map((item: any) => {
+  // 디버깅
+  console.log('item.fields.Image:', item.fields.Image);
+  console.log('Has fields?:', item.fields.Image?.fields);
+  console.log('Has file?:', item.fields.Image?.fields?.file);
+  console.log('Final URL:', item.fields.Image?.fields?.file?.url);
+  
+  return {
     id: item.sys.id,
     title: item.fields.title,
     description: item.fields.description,
@@ -24,5 +17,5 @@ export async function getPortfolioProjects() {
     projectUrl: item.fields.url,
     technologies: item.fields.technologies,
     date: item.fields.date
-  }));
-}
+  });
+});
