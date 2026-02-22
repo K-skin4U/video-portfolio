@@ -16,7 +16,7 @@ export async function getPortfolioProjects() {
     id: item.sys.id,
     title: item.fields.title,
     description: item.fields.description,
-    thumbnailImage: item.fields.image?.fields?.file?.url,
+    thumbnailImage: item.fields.Image?.fields?.file?.url,
     videos: item.fields.videos?.map((video: any) => ({
       url: video.fields.file.url,
       title: video.fields.title
