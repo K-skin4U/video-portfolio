@@ -8,7 +8,7 @@ export default async function Portfolio() {
     <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#fff' }}>
       <header style={{ marginBottom: '60px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '48px', marginBottom: '20px', color: '#000' }}>Joohyung Park</h1>
-        <p style={{ fontSize: '20px', color: '#666' }}>
+        <p style={{ fontSize: '16px', color: '#666' }}>
             Full-Cycle Video Producer: Motion Graphics, Animation, Editing, Color Correction & Audio Post-Production
 
         </p>
