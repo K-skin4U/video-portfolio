@@ -14,16 +14,16 @@ export async function getPortfolioProjects() {
 
   return entries.items.map((item: any) => {
     // 디버깅
-    console.log('item.fields.Image:', item.fields.Image);
+    console.log('item.fields.image:', item.fields.image);
     console.log('Has fields?:', item.fields.image?.fields);
-    console.log('Has file?:', item.fields.Image?.fields?.file);
-    console.log('Final URL:', item.fields.Image?.fields?.file?.url);
+    console.log('Has file?:', item.fields.image?.fields?.file);
+    console.log('Final URL:', item.fields.image?.fields?.file?.url);
     
     return {
       id: item.sys.id,
       title: item.fields.title,
       description: item.fields.description,
-      thumbnailImage: item.fields.Image?.fields?.file?.url,
+      image: item.fields.image?.fields?.file?.url,
       videos: item.fields.videos?.map((video: any) => ({
         url: video.fields.file.url,
         title: video.fields.title
