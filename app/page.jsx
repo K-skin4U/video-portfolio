@@ -3,8 +3,6 @@ import { getPortfolioProjects } from '../lib/contentful';
 
 export default async function Portfolio() {
   const projects = await getPortfolioProjects();
-  // 디버깅 - 첫 번째 프로젝트 데이터 확인
-  console.log('First project:', projects[0]);
 
   return (
     <div style={{ padding: '40px', maxWidth: '1200px', margin: '0 auto', backgroundColor: '#fff' }}>
@@ -14,12 +12,6 @@ export default async function Portfolio() {
           Full-Cycle Video Producer: Motion Graphics, Animation, Editing, Color Correction & Audio Post-Production
         </p>
       </header>
-
-      {/* 디버깅 정보 */}
-      <div style={{ background: '#f0f0f0', padding: '20px', marginBottom: '20px' }}>
-        <h3>Debug Info:</h3>
-        <p>Thumbnail URL: {projects[0]?.thumbnailImage || 'NOT FOUND'}</p>
-      </div>
 
       {projects.map((project) => (
         <section key={project.id} style={{ marginBottom: '80px' }}>
@@ -79,7 +71,9 @@ export default async function Portfolio() {
         color: '#666',
         fontSize: '14px'
       }}>
-        © 2026 Joohyung Park. All rights reserved.
+        © 2026 Joohyung Park. This portfolio is for display purposes only.
+
+All works are copyrighted by VOA and KBS.
       </footer>
     </div>
   );
